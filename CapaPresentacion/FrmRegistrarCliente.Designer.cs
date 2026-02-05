@@ -1,16 +1,23 @@
-﻿namespace CapaPresentacion
+﻿using CapaNegocio;
+using System;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
 {
+    // ARCHIVO DE DISEÑO DEL FORMULARIO REGISTRAR CLIENTE
+    // Este archivo es generado automáticamente por el diseñador de Windows Forms
+    // Contiene la inicialización de todos los componentes visuales del formulario
     partial class FrmRegistrarCliente
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +27,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
@@ -50,13 +57,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 20);
+            this.label1.Size = new System.Drawing.Size(267, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRAR NUEVO CLIENTE";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -93,7 +99,6 @@
             this.label5.Size = new System.Drawing.Size(34, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "RFC";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -178,6 +183,7 @@
             this.btncancelar.TabIndex = 14;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnguardar
             // 
@@ -187,7 +193,7 @@
             this.btnguardar.TabIndex = 15;
             this.btnguardar.Text = "&Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
-            this.btnguardar.Click += new System.EventHandler(this.button2_Click);
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // txtidcliente
             // 
@@ -219,8 +225,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistrarCliente";
             this.Text = "FrmRegistrarCliente";
+            this.Load += new System.EventHandler(this.FrmRegistrarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +236,7 @@
 
         #endregion
 
+        // CONTROLES DEL FORMULARIO
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -235,15 +244,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.TextBox txtapellidos;
-        private System.Windows.Forms.TextBox txtdni;
-        private System.Windows.Forms.TextBox txtrfc;
-        private System.Windows.Forms.TextBox txttelefono;
-        private System.Windows.Forms.RadioButton rbtnactivo;
-        private System.Windows.Forms.RadioButton rbtninactivo;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.TextBox txtidcliente;
+        public System.Windows.Forms.RadioButton rbtnactivo;
+        public System.Windows.Forms.RadioButton rbtninactivo;
+        public System.Windows.Forms.TextBox txtnombre;
+        public System.Windows.Forms.TextBox txtapellidos;
+        public System.Windows.Forms.TextBox txtdni;
+        public System.Windows.Forms.TextBox txtrfc;
+        public System.Windows.Forms.TextBox txttelefono;
+        public System.Windows.Forms.TextBox txtidcliente;
     }
 }

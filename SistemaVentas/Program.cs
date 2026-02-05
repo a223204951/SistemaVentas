@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace SistemaVentas
 {
+    // CLASE PRINCIPAL DEL PROGRAMA
+    // Punto de entrada de la aplicación
     internal static class Program
     {
         /// <summary>
@@ -16,7 +18,8 @@ namespace SistemaVentas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            // Inicia la aplicación mostrando el formulario de listado de clientes
+            Application.Run(new CapaPresentacion.FrmListadoCliente());
         }
     }
 }

@@ -9,8 +9,11 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
+    // CLASE DE DATOS - CLIENTE
+    // Esta clase maneja todas las operaciones de acceso a datos relacionadas con clientes
     public class CDCliente
     {
+        // PROPIEDADES DEL CLIENTE
         public int Idcliente { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
