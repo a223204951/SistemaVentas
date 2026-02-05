@@ -177,7 +177,7 @@ namespace CapaPresentacion
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(440, 392);
+            this.btncancelar.Location = new System.Drawing.Point(550, 392);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 14;
@@ -187,7 +187,7 @@ namespace CapaPresentacion
             // 
             // btnguardar
             // 
-            this.btnguardar.Location = new System.Drawing.Point(550, 392);
+            this.btnguardar.Location = new System.Drawing.Point(437, 392);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 15;
