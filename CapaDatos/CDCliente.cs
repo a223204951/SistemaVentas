@@ -33,7 +33,7 @@ namespace CapaDatos
             try
             {
                 conexion.ConnectionString = Conexion.Conn;
-                SqlCommand Cmd = new SqlCommand("sp_listar_cliente", conexion);
+                SqlCommand Cmd = new SqlCommand("splistar_cliente", conexion);
                 Cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(Cmd);
