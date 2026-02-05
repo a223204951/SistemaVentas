@@ -44,8 +44,16 @@ namespace CapaPresentacion
 
         // EVENTO CLICK DEL BOTÓN GUARDAR
         // Guarda o edita el cliente según el modo en que se abrió el formulario
+        // PROCESO:
+        // 1. Determina el estado del cliente según el RadioButton seleccionado
+        // 2. Valida que los campos obligatorios estén llenos
+        // 3. Si Insert=true: Llama a CNCliente.Guardar() que ejecuta el SP spguardar_cliente
+        // 4. Si Edit=true: Llama a CNCliente.Editar() que ejecuta el SP speditar_cliente
+        // 5. Ambos SP ejecutan INSERT o UPDATE respectivamente en la tabla dbo.cliente
+        // 6. Regresa al listado de clientes para ver los cambios reflejados
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            // Determinar el estado según el RadioButton seleccionado
             string estado = "";
             if (rbtnactivo.Checked == true)
             {
@@ -58,6 +66,7 @@ namespace CapaPresentacion
 
             try
             {
+                // Validar que los campos obligatorios no estén vacíos
                 if (this.txtnombre.Text == string.Empty || this.txtapellidos.Text == string.Empty)
                 {
                     MessageBox.Show("Ingrese los datos del cliente", "Sistema de Ventas",
@@ -65,12 +74,16 @@ namespace CapaPresentacion
                 }
                 else
                 {
+                    // MODO INSERTAR: Agregar nuevo cliente a la base de datos
                     if (this.Insert == true)
                     {
+                        // Llamar al método Guardar con el orden correcto: nombre, apellidos, dni, rfc, telefono, estado
+                        // Este método ejecuta el stored procedure: spguardar_cliente
+                        // El SP hace un INSERT en la tabla dbo.cliente
                         CNCliente.Guardar(this.txtnombre.Text,
                             this.txtapellidos.Text,
-                            this.txtrfc.Text,
                             this.txtdni.Text,
+                            this.txtrfc.Text,
                             this.txttelefono.Text,
                             estado);
                         MessageBox.Show("Cliente registrado correctamente",
@@ -78,13 +91,17 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
+                    // MODO EDITAR: Actualizar cliente existente en la base de datos
                     else if (this.Edit == true)
                     {
+                        // Llamar al método Editar con el orden correcto: idcliente, nombre, apellidos, dni, rfc, telefono, estado
+                        // Este método ejecuta el stored procedure: speditar_cliente
+                        // El SP hace un UPDATE en la tabla dbo.cliente WHERE idcliente = @idcliente
                         CNCliente.Editar(Convert.ToInt32(this.txtidcliente.Text),
                             this.txtnombre.Text,
                             this.txtapellidos.Text,
-                            this.txtrfc.Text,
                             this.txtdni.Text,
+                            this.txtrfc.Text,
                             this.txttelefono.Text,
                             estado);
                         MessageBox.Show("Cliente editado correctamente",
@@ -92,9 +109,12 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
+
+                    // Resetear las banderas de control
                     this.Insert = false;
                     this.Edit = false;
 
+                    // Regresar al listado de clientes para ver los cambios
                     FrmListadoCliente form = new FrmListadoCliente();
                     form.Show();
                     this.Hide();
@@ -102,6 +122,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
+                // Mostrar mensaje de error en caso de fallo
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
