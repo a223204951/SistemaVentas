@@ -20,7 +20,6 @@ namespace SistemaVentas
             Application.SetCompatibleTextRenderingDefault(false);
             // Inicia la aplicación mostrando el formulario de listado de clientes
             Application.Run(new CapaPresentacion.FrmListadoCliente());
-            // PRUEBA COMENTARIO
         }
     }
 }
