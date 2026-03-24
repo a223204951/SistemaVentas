@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{948833AC-153D-429E-AB60-5E2FF0D71AE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmListadoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoCategoria.Designer.cs">
+      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoCliente.Designer.cs">
+      <DependentUpon>FrmListadoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarCliente.Designer.cs">
+      <DependentUpon>FrmRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoEmpleado.Designer.cs">
+      <DependentUpon>FrmListadoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoProducto.Designer.cs">
+      <DependentUpon>FrmListadoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoProveedor.Designer.cs">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarCategoria.Designer.cs">
+      <DependentUpon>FrmRegistrarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarEmpleado.Designer.cs">
+      <DependentUpon>FrmRegistrarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarProducto.Designer.cs">
+      <DependentUpon>FrmRegistrarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.Designer.cs">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{f079a3b8-8d69-45c4-b598-b7f244ce1b57}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmListadoCategoria.resx">
+      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarCliente.resx">
+      <DependentUpon>FrmRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoEmpleado.resx">
+      <DependentUpon>FrmListadoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoProducto.resx">
+      <DependentUpon>FrmListadoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoProveedor.resx">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarCategoria.resx">
+      <DependentUpon>FrmRegistrarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarEmpleado.resx">
+      <DependentUpon>FrmRegistrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarProducto.resx">
+      <DependentUpon>FrmRegistrarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarProveedor.resx">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

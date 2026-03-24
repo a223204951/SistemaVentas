@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CapaDatos/CapaDatos.csproj" Id="420c23b1-b029-41dc-80c7-2a0bece9d32a" />
+  <Project Path="CapaNegocio/CapaNegocio.csproj" Id="f079a3b8-8d69-45c4-b598-b7f244ce1b57" />
+  <Project Path="CapaPresentacion/CapaPresentacion.csproj" Id="948833ac-153d-429e-ab60-5e2ff0d71ae8" />
+  <Project Path="SistemaVentas/SistemaVentas.csproj" Id="2af47813-d174-4e9d-86d7-a64b14e83b55" />
+</Solution>
